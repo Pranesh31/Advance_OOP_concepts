@@ -23,12 +23,12 @@ public class ChildPatient extends Person implements Diagnosable{
     }
 
     @Override
-    public void setSystolic(int s) {
-        systolic = s;
-    }
+    public void setSystolic(int s) {systolic = s; }
 
     @Override
     public void setDiastolic(int d) {
         diastolic = d;
     }
+
+
 }

@@ -3,7 +3,7 @@ files:
 - name: src/Task.java
   visible: true
   placeholders:
-  - offset: 286
+  - offset: 342
     length: 68
     placeholder_text: |-
       /* TODO.
@@ -12,21 +12,21 @@ files:
       length: 68
       offset: 286
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: new BufferedInputStream(new FileInputStream(filename))
-  - offset: 385
-    length: 83
+  - offset: 441
+    length: 14
     placeholder_text: "/* TODO \nCreate a byte array of about 1024 bytes or however\
       \ many bytes you want. */"
     initial_state:
       length: 83
       offset: 385
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: new byte[1024]
-  - offset: 510
+  - offset: 497
     length: 145
     placeholder_text: "/* TODO \nCreate a while loop to read the contents of the file\
       \ and put them in the variable \"contents\" declared at the beginning of the\
@@ -36,31 +36,31 @@ files:
       offset: 510
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Failed
     encrypted_possible_answer: |-
       while ((lengthRead = in.read(buffer)) > 0) {
                       contents = contents + new String(buffer,0,lengthRead);
                   }
-  - offset: 673
-    length: 43
+  - offset: 786
+    length: 13
     placeholder_text: "/* TODO \nPut the correct Exception here. */"
     initial_state:
       length: 43
       offset: 673
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: IOException e
-  - offset: 806
-    length: 71
+  - offset: 889
+    length: 23
     placeholder_text: "/* TODO \nReturn a Databse object initialized with the contents\
       \ read. */"
     initial_state:
       length: 71
       offset: 806
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: ' new Database(contents'
   text: "import java.io.*;\n\npublic class Task {\n    public static void main(String[]\
     \ ar) {\n        Task t = new Task();\n        Database d = t.readCSV(\"./resources/iris-data.csv\"\
@@ -79,15 +79,15 @@ files:
   visible: true
   placeholders:
   - offset: 587
-    length: 128
+    length: 453
     placeholder_text: "/* TODO \nThis constructor should take the contents of a CSV\
       \ file and initialize the memember variables of the Database class.\n*/"
     initial_state:
       length: 128
       offset: 587
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: |2-
               String[] lines = contents.split("\n");
               this.colNames = lines[0].split(",");
@@ -96,8 +96,8 @@ files:
                   this.data[i - 1] = lines[i].split(",");
               }
               this.numRows = lines.length - 1;
-  - offset: 778
-    length: 104
+  - offset: 1104
+    length: 101
     placeholder_text: |-
       /* TODO */
       This method should return the data contained on row "row" and the column matching  @columname
@@ -105,8 +105,8 @@ files:
       length: 104
       offset: 778
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: |2-
               int col = 0;
               for(col=0;col<this.colNames.length && !(this.colNames[col].equals(columnName));col++);
@@ -152,5 +152,8 @@ files:
 - name: test/iris-data.csv
   visible: true
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: Index 1 out of bounds for length 0
+  time: Fri, 11 Mar 2022 15:41:39 UTC
 record: -1
